@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 
 public class TestBookMarksIiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.from(BookMarksIiApplication::main).with(TestcontainersConfiguration.class).run(args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.from(BookMarksIiApplication::main).with(TestcontainersConfiguration.class).run(args);
+    }
 
 }
