@@ -19,7 +19,7 @@ public class BookmarkService {
     }
 
     public List<Bookmark> finAll(){
-        return bookmarkRepository.getAllByCreatedAtDesc();
+        return bookmarkRepository.findAllByOrderByCreatedAtDesc();
     }
 
 }
