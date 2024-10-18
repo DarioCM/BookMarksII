@@ -5,6 +5,7 @@ import dev.dario.bookmarks.entity.Bookmark;
 import dev.dario.bookmarks.record.CreateBookmarkCmd;
 import dev.dario.bookmarks.repository.BookmarkRepository;
 import dev.dario.bookmarks.repository.UserRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,10 +26,12 @@ public class BookmarkService {
         this.userRepository = userRepository;
     }
 
+    @Cacheable
     public List<BookmarkDTO> finAll(){
         return bookmarkRepository.findAllByOrderByCreatedAtDesc();
     }
 
+    @Cacheable
     public Optional<BookmarkDTO> findBookmarkById(Long id) {
         return bookmarkRepository.findBookmarkById(id);
     }
